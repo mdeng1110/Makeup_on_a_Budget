@@ -9,7 +9,7 @@ class Optimizer():
         with open(self.file_name, 'r') as file:
             csvreader = csv.reader(file)
             next(csvreader, None)
-            
+
             for row in csvreader:
                 rows.append(row)
         return rows
@@ -21,11 +21,20 @@ class Optimizer():
         total_cost = 0.0
 
         for row in self.data:
-            if total_cost > budget:
-                break
-            total_cost += float(row[2])
-            chosen_categories.append(row[1])
+            category = row[1]
+            price = float(row[2])
+            rating = float(row[3])
+
+            if category in chosen_categories or rating < min_rating:
+                continue
+            chosen_categories.append(category)
             cart.append(row)
+            total_cost += float(price)
+            
+            if total_cost > budget:
+                cart.pop()
+                total_cost -= float(price)
+                break
         
         print('TOTAL: ', total_cost)
         print('CART: ', cart)
