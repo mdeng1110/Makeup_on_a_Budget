@@ -1,4 +1,5 @@
 import csv
+import random
 
 class Optimizer():
     def __init__(self, file_name):
@@ -16,18 +17,19 @@ class Optimizer():
 
 
     def optimize(self, budget=100, min_rating=4.0):
-        chosen_categories = []
+        chosen_product = []
         cart = []
         total_cost = 0.0
 
-        for row in self.data:
+        while total_cost < 100:
+            row = self.data[random.randint(0,len(self.data))]
             category = row[1]
             price = float(row[2])
             rating = float(row[3])
 
-            if category in chosen_categories or rating < min_rating:
+            if category in chosen_product or rating < min_rating:
                 continue
-            chosen_categories.append(category)
+            chosen_product.append(category)
             cart.append(row)
             total_cost += float(price)
             
