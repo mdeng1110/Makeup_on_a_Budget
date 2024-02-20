@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    </head>
+<body>
+    <div class="container-fluid">
+        <div class="col-xs-6">
+            <form class="form-horizontal" action="/" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <div class="form-group">
+                    <label for="budget-input">Budget</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="budget-input">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="rating-input">Rating</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="rating-input">
+                            <option value="4">4 and up</option>
+                            <option value="3">3 and up</option>
+                            <option value="2">2 and up</option>
+                            <option value="1">1 and up</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+            </form>
+        </div>
+        <div class="col-xs-6">
+            <h2 style="text-align:center;">Your Beauty Haul</h2>
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>URL</td>
+                </tr>
+            </table>
+            <button type="button" class="btn btn-primary">Checkout</button>
+            <button type="button" class="btn btn-danger">Clear Basket</button>
+        </div>
+    </div>
+</body>
+</html>
