@@ -38,33 +38,35 @@ class Optimizer():
                 total_cost -= float(price)
                 break
         
-        print('TOTAL: ', total_cost)
-        print('CART: ', cart)
+        return {
+            'cart': cart,
+            'total': total_cost
+        }
         
 
-if __name__ == '__main__':
-    o = Optimizer('kvdbeauty_data.csv')
-    print(o.optimize())
+# if __name__ == '__main__':
+#     o = Optimizer('kvdbeauty_data.csv')
+#     print(o.optimize())
 
 
 
 
 
 
-# def knapSack(maximum, weight, value, amount):
-#     # initial conditions
-#     if amount == 0 or maximum == 0 :
-#        return 0
-#     # If weight is higher than capacity then it is not included
-#     if (weight[amount-1] > maximum):
-#        return knapSack(maximum, weight, value, amount-1)
-#     # return either amount of items being included or not
-#     else:
-#        return max(value[amount-1] + knapSack(maximum-weight[amount-1], weight, value, amount-1),
-#           knapSack(maximum, weight, value, amount-1))
-#  # To test above function
-# value = [60, 100, 120]
-# weight = [10, 20, 30]
-# maximum = 50
-# amount = len(value)
-# print (knapSack(maximum, weight, value, amount))
+# # def knapSack(maximum, weight, value, amount):
+# #     # initial conditions
+# #     if amount == 0 or maximum == 0 :
+# #        return 0
+# #     # If weight is higher than capacity then it is not included
+# #     if (weight[amount-1] > maximum):
+# #        return knapSack(maximum, weight, value, amount-1)
+# #     # return either amount of items being included or not
+# #     else:
+# #        return max(value[amount-1] + knapSack(maximum-weight[amount-1], weight, value, amount-1),
+# #           knapSack(maximum, weight, value, amount-1))
+# #  # To test above function
+# # value = [60, 100, 120]
+# # weight = [10, 20, 30]
+# # maximum = 50
+# # amount = len(value)
+# # print (knapSack(maximum, weight, value, amount))
