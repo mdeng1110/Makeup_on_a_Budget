@@ -20,7 +20,7 @@ I am proud of the fact that I was able to create a working prototype for the pro
 # What we learned
 I learned how to fully implement a web application using Django. I also learned about various optimization strategies for product cart optimizations.
 
-#What's next for Make Up on a Budget
+# What's next for Make Up on a Budget
 The following is next for Make Up on a Budget:
 - Integrate with Sephora API
 - Improve Optimization Algorithm
